@@ -30,53 +30,7 @@
   <body>
     <div class="reveal">
       <div class="slides">
-        <section>
-          <h1>Music Synthesis</h1>
-          <h3>in JavaScript</h3>
-          <p>
-            <small>
-              Sébastien Jalliffier Verne<br />
-              <a href="https://github.com/volcomix">github.com/volcomix</a>
-            </small>
-          </p>
-        </section>
-        <section>
-          <h2>Web Audio API</h2>
-          <p>
-            <small>
-              See
-              <a
-                href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API"
-              >
-                MDN
-              </a>
-            </small>
-          </p>
-          <p>Audio routing graph</p>
-          <p>
-            Audio nodes<br />
-            <small>
-              See
-              <a
-                href="https://developer.mozilla.org/en-US/docs/Web/API/AudioNode#Description"
-              >
-                MDN
-              </a>
-            </small>
-          </p>
-          <p>Audio params</p>
-        </section>
-        <section>
-          <h2>Synthesis basics</h2>
-          <p>Oscillator<br /><small>Frequency</small></p>
-          <p>Gain<br /><small>Amplitude</small></p>
-          <p>
-            Biquad filter<br /><small>Lowpass, highpass, bandpass, ...</small>
-          </p>
-          <p>Envelope</p>
-          <p>Frequency Modulation</p>
-          <p>LFO</p>
-        </section>
+        <section data-markdown="slides.md"></section>
       </div>
     </div>
 
@@ -87,6 +41,8 @@
       // - https://github.com/hakimel/reveal.js#configuration
       // - https://github.com/hakimel/reveal.js#dependencies
       Reveal.initialize({
+        controls: false,
+        slideNumber: true,
         hash: true,
         dependencies: [
           { src: "reveal.js/plugin/markdown/marked.js" },
