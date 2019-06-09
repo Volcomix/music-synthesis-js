@@ -261,7 +261,7 @@ body {
 
 .reveal .roll span:after {
   color: #fff;
-  background: darken(var(--linkColor), 15%); /* FIXME remove darken */
+  background: var(--linkColorRolling);
 }
 
 /*********************************************

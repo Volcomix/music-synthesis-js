@@ -34,6 +34,7 @@ overridden by the super-theme */
   /* Links and actions */
   --linkColor: #13daec;
   --linkColorHover: #89ecf5;
+  --linkColorRolling: #0d99a5;
 
   /* Text selection */
   --selectionBackgroundColor: #ff5e99;
