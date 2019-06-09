@@ -1,0 +1,18 @@
+@import './theme/light.css';
+
+.criteo .progress {
+  background: transparent;
+}
+
+.criteo .progress span {
+  background: linear-gradient(
+    to right,
+    var(--linkColor),
+    var(--linkColorHover)
+  );
+}
+
+.criteo .slide-number {
+  background-color: transparent;
+  color: var(--mainColor);
+}

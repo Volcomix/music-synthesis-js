@@ -17,7 +17,7 @@
 
 /* Override theme settings (see ./template/settings.scss) */
 :root {
-  --backgroundColor: #191919;
+  --backgroundColor: #2a2e33;
 
   --mainColor: #fff;
   --headingColor: #fff;
@@ -29,10 +29,10 @@
   --headingLetterSpacing: normal;
   --headingTextTransform: uppercase;
   --headingFontWeight: 600;
-  --linkColor: #42affa;
-  --linkColorHover: #8dcffc;
-  --linkColorRolling: #068de9;
-  --selectionBackgroundColor: #bee4fd;
+  --linkColor: #f26223;
+  --linkColorHover: #ff891f;
+  --linkColorRolling: #f26223;
+  --selectionBackgroundColor: #ff891f;
 
   --heading1Size: 2.5em;
   --heading2Size: 1.6em;
