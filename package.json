@@ -6,7 +6,7 @@
   "author": "Volcomix",
   "license": "MIT",
   "scripts": {
-    "start": "browser-sync start --server --files 'index.html,slides.md'"
+    "start": "browser-sync start --server --files 'index.html' 'slides.md' 'css'"
   },
   "devDependencies": {
     "browser-sync": "^2.26.7"
