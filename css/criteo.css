@@ -1,4 +1,4 @@
-@import './theme/dark.css';
+@import './theme/light.css';
 
 :root {
   --mainFontSize: 42px;
@@ -13,7 +13,7 @@
   --linkColorRolling: #f26223;
   --selectionBackgroundColor: #ff891f;
 
-  --heading1Size: 2.2em;
+  --heading1Size: 2em;
   --heading2Size: 1.6em;
   --heading3Size: 1.2em;
   --heading4Size: 1em;
