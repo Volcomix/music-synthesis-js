@@ -1,0 +1,14 @@
+{
+  "name": "music-synthesis-js",
+  "version": "1.0.0",
+  "description": "Presentation slides for a workshop about music synthesis in JavaScript.",
+  "private": true,
+  "author": "Volcomix",
+  "license": "MIT",
+  "scripts": {
+    "start": "browser-sync start --server --files 'index.html'"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.7"
+  }
+}
