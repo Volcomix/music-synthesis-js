@@ -1,9 +1,17 @@
 @import './template/settings.css';
 @import './template/theme.css';
 
+@import '../../reveal.js/lib/font/league-gothic/league-gothic.css';
+@import 'https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic';
+
 :root {
   --backgroundColor: #2a2e33;
 
   --mainColor: #fff;
   --headingColor: #fff;
+
+  --linkColor: #f26223;
+  --linkColorHover: #ff891f;
+  --linkColorRolling: #f26223;
+  --selectionBackgroundColor: #ff891f;
 }
