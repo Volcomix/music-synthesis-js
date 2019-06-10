@@ -1,22 +1,12 @@
-@import './theme/light.css';
+@import './theme/dark.css';
+@import '../reveal.js/lib/font/league-gothic/league-gothic.css';
+@import 'https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic';
 
 :root {
-  --mainFontSize: 42px;
-  --mainFont: Arial;
-  --headingFont: 'Century Gothic';
-  --headingTextShadow: none;
-  --headingLetterSpacing: normal;
-  --headingTextTransform: uppercase;
-  --headingFontWeight: 600;
   --linkColor: #f26223;
   --linkColorHover: #ff891f;
   --linkColorRolling: #f26223;
   --selectionBackgroundColor: #ff891f;
-
-  --heading1Size: 2em;
-  --heading2Size: 1.6em;
-  --heading3Size: 1.2em;
-  --heading4Size: 1em;
 }
 
 .criteo .progress {

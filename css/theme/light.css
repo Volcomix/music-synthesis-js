@@ -7,13 +7,3 @@
   --mainColor: #2a2e33;
   --headingColor: #2a2e33;
 }
-
-section.has-light-background,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: #fff;
-}
