@@ -20,6 +20,8 @@ Audio nodes
 
 Audio params
 
+Scheduling
+
 ---
 
 ## SYNTHESIS BASICS
