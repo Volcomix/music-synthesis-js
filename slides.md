@@ -39,11 +39,11 @@ Scheduling
 
 ## Typical workflow
 
-<!-- .slide: data-transition="slide-in none-out" -->
+<!-- .slide: data-transition="none" -->
 
 ![Audio context](assets/audio-context.png)
 
----
+¨¨¨
 
 ## Typical workflow
 
@@ -51,7 +51,7 @@ Scheduling
 
 ![Audio context 1](assets/audio-context-1.png)
 
----
+¨¨¨
 
 ## Typical workflow
 
@@ -59,7 +59,7 @@ Scheduling
 
 ![Audio context 2](assets/audio-context-2.png)
 
----
+¨¨¨
 
 ## Typical workflow
 
@@ -67,7 +67,7 @@ Scheduling
 
 ![Audio context 3](assets/audio-context-3.png)
 
----
+¨¨¨
 
 ## Typical workflow
 
@@ -75,7 +75,7 @@ Scheduling
 
 ![Audio context 4](assets/audio-context-4.png)
 
----
+¨¨¨
 
 ## Typical workflow
 
