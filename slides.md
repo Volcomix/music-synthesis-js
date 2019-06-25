@@ -24,23 +24,64 @@ Scheduling
 
 ---
 
-## Web Audio API - Concepts
+## Concepts
 
-- Audio context
-- Audio nodes
-- Modular routing
-- Audio routing graph
+- Audio context  
+  <small class="fragment" data-fragment-index="1">➔ is the place where audio is operated</small>
+- Audio nodes  
+  <small class="fragment" data-fragment-index="2">➔ are basic elements of audio</small>
+- Modular routing  
+  <small class="fragment" data-fragment-index="3">➔ connects nodes with each other</small>
+- Audio routing graph  
+  <small class="fragment" data-fragment-index="4">➔ the network of audio nodes</small>
 
 ---
 
-## Web Audio API - Usage
+## Typical workflow
 
-1. Create audio context
-2. Inside the context, create sources
-3. Create effect nodes (reverb, biquad filter, panner, compressor, ...)
-4. Connect the sources up to the effects, and the effects to the destination
+<!-- .slide: data-transition="slide-in none-out" -->
 
 ![Audio context](assets/audio-context.png)
+
+---
+
+## Typical workflow
+
+<!-- .slide: data-transition="none" -->
+
+![Audio context 1](assets/audio-context-1.png)
+
+---
+
+## Typical workflow
+
+<!-- .slide: data-transition="none" -->
+
+![Audio context 2](assets/audio-context-2.png)
+
+---
+
+## Typical workflow
+
+<!-- .slide: data-transition="none" -->
+
+![Audio context 3](assets/audio-context-3.png)
+
+---
+
+## Typical workflow
+
+<!-- .slide: data-transition="none" -->
+
+![Audio context 4](assets/audio-context-4.png)
+
+---
+
+## Typical workflow
+
+<!-- .slide: data-transition="none" -->
+
+![Audio context 5](assets/audio-context-5.png)
 
 ---
 
