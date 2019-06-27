@@ -85,6 +85,70 @@ Scheduling
 
 ---
 
+## General audio graph definition
+
+- AudioContext
+- AudioNode
+- AudioParam
+
+---
+
+## Defining audio sources
+
+- OscillatorNode
+- AudioBuffer
+- AudioBufferSourceNode
+- MediaElementAudioSourceNode
+- MediaStreamAudioSourceNode
+
+---
+
+## Defining audio effects filters
+
+- BiquadFilterNode
+- ConvolverNode
+- DelayNode
+- DynamicsCompressorNode
+- GainNode
+- WaveShaperNode
+- PeriodicWave
+- IIRFilterNode
+
+---
+
+## Defining audio destinations
+
+- AudioDestinationNode
+- MediaStreamAudioDestinationNode
+
+---
+
+## Data analysis and visualization
+
+- AnalyserNode
+
+---
+
+## Splitting and merging audio channels
+
+- ChannelSplitterNode
+- ChannelMergerNode
+
+---
+
+## Audio spatialization
+
+- PannerNode
+- StereoPannerNode
+
+---
+
+## Audio processing in JavaScript
+
+TBD
+
+---
+
 Simple example of modular routing
 
 ![Simple Modular routing](assets/modular-routing1.png)
