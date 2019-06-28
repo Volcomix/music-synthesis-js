@@ -7,6 +7,50 @@ Sébastien Jalliffier Verne
 [github.com/volcomix](https://github.com/volcomix)
 </small>
 
+Notes:
+Today I would like to give you an overview of sound synthesis, maybe music creation, and what kind of powerful things
+you can do right inside your browser.
+
+---
+
+## What is the Web Audio API?
+
+A high-level JavaScript API for processing and synthesizing audio in web applications
+
+Notes:
+So let me introduce the Web Audio API.
+The Web Audio API is a high-level JavaScript API for processing and synthesizing audio in web applications.
+
+---
+
+## What can I use it for?
+
+Notes:
+
+- The goal of this API is to include capabilities found in modern game audio engines and
+  some of the mixing, processing, and filtering tasks that are found in modern desktop audio production applications.
+- You can also make audiovisual art by combining music or sounds produced with Web Audio with
+  visuals made with 2D canvas graphics, 3D WebGL, or SVG.
+
+---
+
+## How does it work?
+
+![](assets/web-audio-vs-guitar-effects.jpg)
+
+Notes:
+
+At the heart of the Web Audio API is a number of different audio inputs, processors, and outputs,
+which you can combine into an audio routing graph that creates the sound you need.
+
+---
+
+## Resources
+
+- [Web Audio API on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API)
+- [Synth Secrets](https://www.soundonsound.com/techniques/synth-secrets-all-63-parts-sound-on-sound)
+- [AudioNodes](https://audionodes.com/online)
+
 ---
 
 ## Web Audio API
