@@ -49,6 +49,7 @@ which you can combine into an audio routing graph that creates the sound you nee
 
 - [Web Audio API on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API)
 - [Synth Secrets](https://www.soundonsound.com/techniques/synth-secrets-all-63-parts-sound-on-sound)
+- [Learning Synths](https://learningsynths.ableton.com/)
 - [AudioNodes](https://audionodes.com/online)
 
 ---
