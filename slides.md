@@ -56,6 +56,18 @@ which you can combine into an audio routing graph that creates the sound you nee
 
 ---
 
+## Workshop environment
+
+https://codesandbox.io/s/github/Volcomix/coder-synth
+
+---
+
+## Workshop environment
+
+![](assets/directories.png)
+
+---
+
 ## Resources
 
 - [Web Audio API on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API)
