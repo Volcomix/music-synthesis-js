@@ -17,7 +17,7 @@ you can do right inside your browser.
 
 ![](assets/high-level-api.jpg) <!-- .element width="40%" -->
 
-A high-level JavaScript API
+A high-level JavaScript API for processing and synthesizing audio
 
 Notes:
 The Web Audio API is a high-level JavaScript API for processing and synthesizing audio in web applications.
@@ -36,6 +36,12 @@ Notes:
 - The goal of this API is to include capabilities found in modern game audio engines
 - And some of the mixing, processing, and filtering tasks that are found in modern desktop audio production applications.
 - You can also make audiovisual art by combining music or sounds produced with Web Audio with visuals made with 2D canvas graphics, 3D WebGL, or SVG.
+
+---
+
+## Where can I use it?
+
+![](assets/caniuse.png)
 
 ---
 
