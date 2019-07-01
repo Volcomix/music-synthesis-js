@@ -15,3 +15,23 @@
   --linkColorRolling: #f26223;
   --selectionBackgroundColor: #ff891f;
 }
+
+section.has-dark-background,
+section.has-dark-background h1,
+section.has-dark-background h2,
+section.has-dark-background h3,
+section.has-dark-background h4,
+section.has-dark-background h5,
+section.has-dark-background h6 {
+  color: #fff;
+}
+
+section.has-dark-background.title,
+section.has-dark-background.title h1,
+section.has-dark-background.title h2,
+section.has-dark-background.title h3,
+section.has-dark-background.title h4,
+section.has-dark-background.title h5,
+section.has-dark-background.title h6 {
+  text-shadow: 0px 5px 7px #000;
+}

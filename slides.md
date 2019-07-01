@@ -1,10 +1,12 @@
+<!-- .slide: class="title" data-background-color="#2a2e33" data-background-image="assets/mixer-background.jpg" data-background-opacity="0.3" -->
+
 # Music Synthesis
 
 ### in JavaScript
 
 <small>  
 Sébastien Jalliffier Verne  
-[github.com/volcomix](https://github.com/volcomix)
+https://github.com/volcomix/music-synthesis-js
 </small>
 
 Notes:
@@ -15,7 +17,7 @@ you can do right inside your browser.
 
 ## What is the Web Audio API?
 
-![](assets/high-level-api.jpg) <!-- .element width="40%" -->
+![](assets/high-level-api.jpg) <!-- .element: width="40%" -->
 
 A high-level JavaScript API for processing and synthesizing audio
 
@@ -27,9 +29,9 @@ Or if you are not familiar with sound synthesis, you can see it as a low-level A
 
 ## What can I use it for?
 
-![](assets/game.jpg) <!-- .element width="40%" style="margin: 0" -->
-![](assets/daw.png) <!-- .element width="40%" style="margin: 0" -->
-![](assets/art.jpg) <!-- .element width="40%" style="margin: 0" -->
+![](assets/game.jpg) <!-- .element: width="40%" style="margin: 0" -->
+![](assets/daw.png) <!-- .element: class="plain" width="40%" style="margin: 0" -->
+![](assets/art.jpg) <!-- .element: class="plain" width="40%" style="margin: 0" -->
 
 Notes:
 
@@ -47,7 +49,7 @@ Notes:
 
 ## How does it work?
 
-![](assets/web-audio-vs-guitar-effects.jpg)
+![](assets/web-audio-vs-guitar-effects.jpg) <!-- .element: class="plain" -->
 
 Notes:
 
@@ -56,19 +58,32 @@ which you can combine into an audio routing graph that creates the sound you nee
 
 ---
 
-## Workshop environment
+<!-- .slide: data-background-color="#2a2e33" -->
+
+## Workshop
 
 https://codesandbox.io/s/github/Volcomix/coder-synth
 
 ---
 
-## Workshop environment
+Your code goes here
 
 ![](assets/directories.png)
 
 ---
 
-![](assets/oscillator.png) <!-- .element width="50%" style="border: none; box-shadow: none; background: none" -->
+You need an AudioContext and a destination
+
+```js
+const audioContext = new AudioContext()
+const destination = audioContext.destination
+```
+
+![](assets/provided.jpg) <!-- .element: class="fragment" data-fragment-index="1" width="60%" -->
+
+---
+
+![](assets/oscillator.png) <!-- .element: width="50%" class="plain" -->
 
 ```js
 this.oscillator = this.audioContext.createOscillator()
@@ -125,7 +140,7 @@ Scheduling
 
 ![Audio context](assets/audio-context.png)
 
-¨¨¨
+--
 
 ## Typical workflow
 
@@ -133,7 +148,7 @@ Scheduling
 
 ![Audio context 1](assets/audio-context-1.png)
 
-¨¨¨
+--
 
 ## Typical workflow
 
@@ -141,7 +156,7 @@ Scheduling
 
 ![Audio context 2](assets/audio-context-2.png)
 
-¨¨¨
+--
 
 ## Typical workflow
 
@@ -149,7 +164,7 @@ Scheduling
 
 ![Audio context 3](assets/audio-context-3.png)
 
-¨¨¨
+--
 
 ## Typical workflow
 
@@ -157,7 +172,7 @@ Scheduling
 
 ![Audio context 4](assets/audio-context-4.png)
 
-¨¨¨
+--
 
 ## Typical workflow
 

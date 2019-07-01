@@ -279,6 +279,7 @@ body {
 .reveal section img.plain {
   border: 0;
   box-shadow: none;
+  background: none;
 }
 
 .reveal a img {
