@@ -35,3 +35,11 @@ section.has-dark-background.title h5,
 section.has-dark-background.title h6 {
   text-shadow: 0px 5px 7px #000;
 }
+
+section.has-dark-background a {
+  color: var(--linkColorHover);
+}
+
+section.has-dark-background a:hover {
+  color: var(--linkColor);
+}

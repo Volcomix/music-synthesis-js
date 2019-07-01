@@ -79,7 +79,7 @@ const audioContext = new AudioContext()
 const destination = audioContext.destination
 ```
 
-![](assets/provided.jpg) <!-- .element: class="fragment" data-fragment-index="1" width="60%" -->
+![](assets/provided.jpg) <!-- .element: class="plain fragment" data-fragment-index="1" width="60%" -->
 
 ---
 
@@ -99,10 +99,10 @@ this.oscillator.start()
 
 ## Resources
 
-- [Web Audio API on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API)
-- [Synth Secrets](https://www.soundonsound.com/techniques/synth-secrets-all-63-parts-sound-on-sound)
-- [Learning Synths](https://learningsynths.ableton.com/)
-- [AudioNodes](https://audionodes.com/online)
+<small>https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API</small>  
+<small>https://www.soundonsound.com/techniques/synth-secrets-all-63-parts-sound-on-sound</small>  
+<small>https://learningsynths.ableton.com</small>  
+<small>https://audionodes.com/online</small>
 
 ---
 
