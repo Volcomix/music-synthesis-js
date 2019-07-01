@@ -68,6 +68,20 @@ https://codesandbox.io/s/github/Volcomix/coder-synth
 
 ---
 
+![](assets/oscillator.png) <!-- .element width="50%" style="border: none; box-shadow: none; background: none" -->
+
+```js
+this.oscillator = this.audioContext.createOscillator()
+this.oscillator.connect(this.destination)
+this.oscillator.start()
+```
+
+---
+
+<!-- .slide: data-background-iframe="http://localhost:8080/Demo/1" data-background-interactive -->
+
+---
+
 ## Resources
 
 - [Web Audio API on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API)
