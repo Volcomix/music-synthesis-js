@@ -83,17 +83,72 @@ const destination = audioContext.destination
 
 ---
 
-![](assets/oscillator.png) <!-- .element: width="50%" class="plain" -->
+Adding a track for your instrument
 
 ```js
-this.oscillator = this.audioContext.createOscillator()
-this.oscillator.connect(this.destination)
-this.oscillator.start()
+// src/music/songs/Workshop1907.js
+
+import Song from '../common/Song'
+import Oscillator from '../instruments/demo/Oscillator'
+
+export default class Workshop1907 extends Song {
+  tempo = 140
+  notesPerBeat = 2
+  tracks = [
+    {
+      instrument: new Oscillator(this.audioContext, this.destination),
+    },
+  ]
+}
+```
+
+---
+
+## Let's make some noise!
+
+![](assets/create-sound.jpg) <!-- .element: class="plain" width="90%" -->
+
+---
+
+![](assets/oscillator.png) <!-- .element: width="90%" style="margin: -15% 0" class="plain" -->
+
+```js
+// src/music/instruments/Oscillator.js
+
+import Instrument from '../../common/Instrument'
+
+export default class Oscillator extends Instrument {
+  start() {
+    this.oscillator = this.audioContext.createOscillator()
+    this.oscillator.frequency.value = 375
+    this.oscillator.connect(this.destination)
+    this.oscillator.start()
+  }
+
+  stop() {
+    this.oscillator.stop()
+  }
+}
 ```
 
 ---
 
 <!-- .slide: data-background-iframe="http://localhost:8080/Demo/1" data-background-interactive -->
+
+---
+
+<!-- .element: data-line-numbers="2" -->
+
+<pre><code class="js" data-line-numbers="2">this.oscillator = this.audioContext.createOscillator()
+this.oscillator.type = 'square' // or sine, triangle, sawtooth, custom
+this.oscillator.frequency.value = 375
+this.oscillator.connect(this.destination)
+this.oscillator.start()
+</code></pre>
+
+---
+
+<!-- .slide: data-background-iframe="http://localhost:8080/Demo/2" data-background-interactive -->
 
 ---
 
