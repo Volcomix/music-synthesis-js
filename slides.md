@@ -110,7 +110,9 @@ export default class Workshop1907 extends Song {
 
 ---
 
-![](assets/oscillator.png) <!-- .element: width="90%" style="margin: -15% 0" class="plain" -->
+## A simple audio graph
+
+![](assets/oscillator.png) <!-- .element: width="90%" style="margin: -18% 0" class="plain" -->
 
 ```js
 // src/music/instruments/Oscillator.js
@@ -120,6 +122,7 @@ import Instrument from '../../common/Instrument'
 export default class Oscillator extends Instrument {
   start() {
     this.oscillator = this.audioContext.createOscillator()
+    this.oscillator.type = 'sine' // Or square, triangle, sawtooth, custom
     this.oscillator.frequency.value = 375
     this.oscillator.connect(this.destination)
     this.oscillator.start()
@@ -137,14 +140,33 @@ export default class Oscillator extends Instrument {
 
 ---
 
-<!-- .element: data-line-numbers="2" -->
+Play some notes
 
-<pre><code class="js" data-line-numbers="2">this.oscillator = this.audioContext.createOscillator()
-this.oscillator.type = 'square' // or sine, triangle, sawtooth, custom
-this.oscillator.frequency.value = 375
-this.oscillator.connect(this.destination)
-this.oscillator.start()
-</code></pre>
+```js
+// src/music/songs/Workshop1907.js
+
+{
+  instrument: new Oscillator(this.audioContext, this.destination),
+  notes: `
+    C-4 --- E-4 --- F#4 --- G-4 ---
+    --- --- --- --- --- --- --- OFF
+  `,
+}
+
+// src/music/instruments/Oscillator.js
+
+export default class Oscillator extends Instrument {
+  ...
+
+  noteOn(noteFrequency, time) {
+    this.oscillator.frequency.setValueAtTime(noteFrequency, time)
+  }
+
+  noteOff(time) {
+    this.oscillator.frequency.setValueAtTime(0, time)
+  }
+}
+```
 
 ---
 
@@ -154,9 +176,9 @@ this.oscillator.start()
 
 ## Resources
 
-<small>https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API</small>  
-<small>https://www.soundonsound.com/techniques/synth-secrets-all-63-parts-sound-on-sound</small>  
-<small>https://learningsynths.ableton.com</small>  
+<small>https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API</small>
+<small>https://www.soundonsound.com/techniques/synth-secrets-all-63-parts-sound-on-sound</small>
+<small>https://learningsynths.ableton.com</small>
 <small>https://audionodes.com/online</small>
 
 ---
@@ -167,7 +189,7 @@ this.oscillator.start()
 
 Audio routing graph
 
-Audio nodes  
+Audio nodes
 <small>See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/AudioNode#Description)</small>
 
 Audio params
@@ -178,13 +200,13 @@ Scheduling
 
 ## Concepts
 
-- Audio context  
+- Audio context
   <small class="fragment" data-fragment-index="1">➔ is the place where audio is operated</small>
-- Audio nodes  
+- Audio nodes
   <small class="fragment" data-fragment-index="2">➔ are basic elements of audio</small>
-- Modular routing  
+- Modular routing
   <small class="fragment" data-fragment-index="3">➔ connects nodes with each other</small>
-- Audio routing graph  
+- Audio routing graph
   <small class="fragment" data-fragment-index="4">➔ the network of audio nodes</small>
 
 ---
@@ -355,13 +377,13 @@ function setupRoutingGraph() {
 
 ## SYNTHESIS BASICS
 
-Oscillator  
+Oscillator
 <small>Frequency</small>
 
-Gain  
+Gain
 <small>Amplitude</small>
 
-Biquad filter  
+Biquad filter
 <small>Lowpass, highpass, bandpass, ...</small>
 
 Envelope
@@ -369,3 +391,7 @@ Envelope
 Frequency Modulation
 
 LFO
+
+```
+
+```

@@ -184,7 +184,7 @@ body {
   display: block;
   padding: 5px;
   overflow: auto;
-  max-height: 400px;
+  max-height: 600px;
   word-wrap: normal;
 }
 
@@ -329,6 +329,14 @@ body {
 .reveal .slide-number {
   background-color: transparent;
   color: var(--mainColor);
+}
+
+/*********************************************
+ * HIGHLIGHT
+ *********************************************/
+
+.reveal .hljs-ln-numbers {
+  display: none;
 }
 
 /*********************************************
