@@ -110,7 +110,7 @@ export default class Workshop1907 extends Song {
 
 ---
 
-## A simple audio graph
+## The oscillator
 
 ![](assets/oscillator.png) <!-- .element: width="90%" style="margin: -18% 0" class="plain" -->
 
@@ -140,7 +140,7 @@ export default class Oscillator extends Instrument {
 
 ---
 
-Play some notes
+Playing some notes
 
 ```js
 // src/music/songs/Workshop1907.js
@@ -174,11 +174,71 @@ export default class Oscillator extends Instrument {
 
 ---
 
+## The amplitude
+
+![](assets/amplitude.png) <!-- .element: style="margin: -15% 0" class="plain" -->
+
+```js
+this.oscillator = this.audioContext.createOscillator()
+
+this.gain = this.audioContext.createGain()
+this.gain.gain.value = 1
+
+this.oscillator.connect(this.gain)
+this.gain.connect(this.destination)
+
+this.oscillator.start()
+```
+
+---
+
+<!-- .slide: data-background-iframe="http://localhost:8080/Demo/3" data-background-interactive -->
+
+---
+
+Scheduling some effects
+
+```js
+// src/music/songs/Workshop1907.js
+
+{
+  instrument: new Amplitude(this.audioContext, this.destination),
+  notes: `
+    C-4 --- E-4 --- F#4 --- G-4 ---
+    --- --- --- --- --- --- --- OFF
+  `,
+  effects: {
+    gain: `
+    056 --- --- --- --- --- 255 ---
+    --- --- --- --- --- --- --- 000
+    `,
+  },
+}
+
+// src/music/instruments/Amplitude.js
+
+fxGain(gain, time) {
+  this.gain.gain.linearRampToValueAtTime((2 * gain) / 255, time)
+}
+```
+
+---
+
+<!-- .slide: data-background-iframe="http://localhost:8080/Demo/4" data-background-interactive -->
+
+---
+
+## The envelope
+
+![](assets/envelope.png) <!-- .element: class="plain" -->
+
+---
+
 ## Resources
 
-<small>https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API</small>
-<small>https://www.soundonsound.com/techniques/synth-secrets-all-63-parts-sound-on-sound</small>
-<small>https://learningsynths.ableton.com</small>
+<small>https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API</small>  
+<small>https://www.soundonsound.com/techniques/synth-secrets-all-63-parts-sound-on-sound</small>  
+<small>https://learningsynths.ableton.com</small>  
 <small>https://audionodes.com/online</small>
 
 ---
