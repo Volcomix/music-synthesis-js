@@ -183,7 +183,7 @@ start() {
   this.oscillator = this.audioContext.createOscillator()
 
   this.gain = this.audioContext.createGain()
-  this.gain.gain.value = 1
+  this.gain.gain.value = 0.5
 
   this.oscillator.connect(this.gain)
   this.gain.connect(this.destination)
