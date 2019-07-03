@@ -179,15 +179,17 @@ export default class Oscillator extends Instrument {
 ![](assets/amplitude.png) <!-- .element: style="margin: -15% 0" class="plain" -->
 
 ```js
-this.oscillator = this.audioContext.createOscillator()
+start() {
+  this.oscillator = this.audioContext.createOscillator()
 
-this.gain = this.audioContext.createGain()
-this.gain.gain.value = 1
+  this.gain = this.audioContext.createGain()
+  this.gain.gain.value = 1
 
-this.oscillator.connect(this.gain)
-this.gain.connect(this.destination)
+  this.oscillator.connect(this.gain)
+  this.gain.connect(this.destination)
 
-this.oscillator.start()
+  this.oscillator.start()
+}
 ```
 
 ---
@@ -217,7 +219,7 @@ Scheduling some effects
 // src/music/instruments/Amplitude.js
 
 fxGain(gain, time) {
-  this.gain.gain.linearRampToValueAtTime((2 * gain) / 255, time)
+  this.gain.gain.linearRampToValueAtTime(gain / 255, time)
 }
 </code></pre>
 
@@ -230,6 +232,33 @@ fxGain(gain, time) {
 ## The envelope
 
 ![](assets/envelope.png) <!-- .element: class="plain" -->
+
+---
+
+```js
+noteOn(noteFrequency, time) {
+  this.oscillator.frequency.setValueAtTime(noteFrequency, time)
+
+  // Attack
+  this.gain.gain.setValueAtTime(0, time)
+  this.gain.gain.linearRampToValueAtTime(1, time + 0.2)
+
+  // Decay
+  this.gain.gain.linearRampToValueAtTime(0.5, time + 0.4)
+}
+
+// Sustain
+
+noteOff(time) {
+  // Release
+  this.gain.gain.setValueAtTime(0.5, time)
+  this.gain.gain.linearRampToValueAtTime(0, time + 0.5)
+}
+```
+
+---
+
+<!-- .slide: data-background-iframe="https://volcomix.github.io/coder-synth/Demo/5" data-background-interactive -->
 
 ---
 
@@ -450,7 +479,3 @@ Envelope
 Frequency Modulation
 
 LFO
-
-```
-
-```
