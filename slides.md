@@ -123,7 +123,7 @@ export default class Oscillator extends Instrument {
   start() {
     this.oscillator = this.audioContext.createOscillator()
     this.oscillator.type = 'sine' // Or square, triangle, sawtooth, custom
-    this.oscillator.frequency.value = 375
+    this.oscillator.frequency.value = 440
     this.oscillator.connect(this.destination)
     this.oscillator.start()
   }
@@ -198,8 +198,7 @@ this.oscillator.start()
 
 Scheduling some effects
 
-```js
-// src/music/songs/Workshop1907.js
+<pre><code class="js" data-line-numbers="1,9-14,17-21">// src/music/songs/Workshop1907.js
 
 {
   instrument: new Amplitude(this.audioContext, this.destination),
@@ -220,7 +219,7 @@ Scheduling some effects
 fxGain(gain, time) {
   this.gain.gain.linearRampToValueAtTime((2 * gain) / 255, time)
 }
-```
+</code></pre>
 
 ---
 
