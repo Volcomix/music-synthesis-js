@@ -299,6 +299,43 @@ stop() {
 
 ---
 
+## Frequency Modulation (FM)
+
+![](assets/fm.png) <!-- .element: class="plain" width="50%" -->
+
+---
+
+```js
+start() {
+  this.oscillator1 = this.audioContext.createOscillator()
+  this.oscillator1.frequency.value = 220
+
+  this.oscillator2 = this.audioContext.createOscillator()
+  this.oscillator2.frequency.value = 440
+
+  this.modulationGain = this.audioContext.createGain()
+  this.modulationGain.gain.value = 50
+
+  this.oscillator1.connect(this.modulationGain)
+  this.modulationGain.connect(this.oscillator2.frequency)
+  this.oscillator2.connect(this.destination)
+
+  this.oscillator1.start()
+  this.oscillator2.start()
+}
+
+stop() {
+  this.oscillator1.stop()
+  this.oscillator2.stop()
+}
+```
+
+---
+
+<!-- .slide: data-background-iframe="https://volcomix.github.io/coder-synth/Demo/7" data-background-interactive -->
+
+---
+
 ## Resources
 
 <small>https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API</small>  
