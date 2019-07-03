@@ -136,7 +136,7 @@ export default class Oscillator extends Instrument {
 
 ---
 
-<!-- .slide: data-background-iframe="http://localhost:8080/Demo/1" data-background-interactive -->
+<!-- .slide: data-background-iframe="https://volcomix.github.io/coder-synth/Demo/1" data-background-interactive -->
 
 ---
 
@@ -170,7 +170,7 @@ export default class Oscillator extends Instrument {
 
 ---
 
-<!-- .slide: data-background-iframe="http://localhost:8080/Demo/2" data-background-interactive -->
+<!-- .slide: data-background-iframe="https://volcomix.github.io/coder-synth/Demo/2" data-background-interactive -->
 
 ---
 
@@ -192,7 +192,7 @@ this.oscillator.start()
 
 ---
 
-<!-- .slide: data-background-iframe="http://localhost:8080/Demo/3" data-background-interactive -->
+<!-- .slide: data-background-iframe="https://volcomix.github.io/coder-synth/Demo/3" data-background-interactive -->
 
 ---
 
@@ -224,7 +224,7 @@ fxGain(gain, time) {
 
 ---
 
-<!-- .slide: data-background-iframe="http://localhost:8080/Demo/4" data-background-interactive -->
+<!-- .slide: data-background-iframe="https://volcomix.github.io/coder-synth/Demo/4" data-background-interactive -->
 
 ---
 
