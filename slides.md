@@ -62,7 +62,7 @@ which you can combine into an audio routing graph that creates the sound you nee
 
 ## Workshop
 
-https://codesandbox.io/s/github/Volcomix/coder-synth
+https://codesandbox.io/s/github/volcomix/coder-synth
 
 ---
 
