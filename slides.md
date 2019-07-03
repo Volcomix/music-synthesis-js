@@ -110,7 +110,7 @@ export default class Workshop1907 extends Song {
 
 ---
 
-## The oscillator
+## Oscillator
 
 ![](assets/oscillator.png) <!-- .element: width="90%" style="margin: -18% 0" class="plain" -->
 
@@ -174,7 +174,7 @@ export default class Oscillator extends Instrument {
 
 ---
 
-## The amplitude
+## Amplitude
 
 ![](assets/amplitude.png) <!-- .element: style="margin: -15% 0" class="plain" -->
 
@@ -229,7 +229,7 @@ fxGain(gain, time) {
 
 ---
 
-## The envelope
+## Envelope
 
 ![](assets/envelope.png) <!-- .element: class="plain" -->
 
@@ -259,6 +259,43 @@ noteOff(time) {
 ---
 
 <!-- .slide: data-background-iframe="https://volcomix.github.io/coder-synth/Demo/5" data-background-interactive -->
+
+---
+
+## Low-frequency oscillator (LFO)
+
+![](assets/lfo.png) <!-- .element: class="plain" width="50%" -->
+
+---
+
+```js
+start() {
+  this.lfo = this.audioContext.createOscillator()
+  this.lfo.frequency.value = 1
+
+  this.oscillator = this.audioContext.createOscillator()
+  this.oscillator.frequency.value = 440
+
+  this.modulationGain = this.audioContext.createGain()
+  this.modulationGain.gain.value = 50
+
+  this.lfo.connect(this.modulationGain)
+  this.modulationGain.connect(this.oscillator.detune)
+  this.oscillator.connect(this.destination)
+
+  this.lfo.start()
+  this.oscillator.start()
+}
+
+stop() {
+  this.lfo.stop()
+  this.oscillator.stop()
+}
+```
+
+---
+
+<!-- .slide: data-background-iframe="https://volcomix.github.io/coder-synth/Demo/6" data-background-interactive -->
 
 ---
 
