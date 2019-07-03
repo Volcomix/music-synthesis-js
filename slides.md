@@ -373,7 +373,21 @@ stop() {
 
 ---
 
-<!-- .slide: data-background-iframe="https://volcomix.github.io/coder-synth/Demo/7" data-background-interactive -->
+<!-- .slide: data-background-iframe="https://volcomix.github.io/coder-synth/Demo/8" data-background-interactive -->
+
+---
+
+[TBD] Filters
+
+---
+
+<!-- .slide: class="title" data-background-color="#2a2e33" data-background-image="assets/strings.jpg" data-background-opacity="0.3" -->
+
+# Example
+
+---
+
+<!-- .slide: data-background-iframe="https://volcomix.github.io/coder-synth/Demo/9" data-background-interactive -->
 
 ---
 
