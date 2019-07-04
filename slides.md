@@ -94,7 +94,7 @@ AudioParam methods
 
 ## Workshop
 
-https://codesandbox.io/live/Y8XRM
+https://codesandbox.io/s/github/Volcomix/coder-synth
 
 ---
 
