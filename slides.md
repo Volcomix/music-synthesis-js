@@ -9,10 +9,6 @@ Sébastien Jalliffier Verne
 https://github.com/volcomix/music-synthesis-js
 </small>
 
-Notes:
-Today I would like to give you an overview of sound synthesis, maybe music creation, and what kind of powerful things
-you can do right inside your browser.
-
 ---
 
 ## What is the Web Audio API?
@@ -21,10 +17,6 @@ you can do right inside your browser.
 
 A high-level JavaScript API for processing and synthesizing audio
 
-Notes:
-The Web Audio API is a high-level JavaScript API for processing and synthesizing audio in web applications.
-Or if you are not familiar with sound synthesis, you can see it as a low-level API to create sounds!
-
 ---
 
 ## What can I use it for?
@@ -32,12 +24,6 @@ Or if you are not familiar with sound synthesis, you can see it as a low-level A
 ![](assets/game.jpg) <!-- .element: width="40%" style="margin: 0" -->
 ![](assets/daw.png) <!-- .element: class="plain" width="40%" style="margin: 0" -->
 ![](assets/art.jpg) <!-- .element: class="plain" width="40%" style="margin: 0" -->
-
-Notes:
-
-- The goal of this API is to include capabilities found in modern game audio engines
-- And some of the mixing, processing, and filtering tasks that are found in modern desktop audio production applications.
-- You can also make audiovisual art by combining music or sounds produced with Web Audio with visuals made with 2D canvas graphics, 3D WebGL, or SVG.
 
 ---
 
@@ -50,11 +36,6 @@ Notes:
 ## How does it work?
 
 ![](assets/web-audio-vs-guitar-effects.jpg) <!-- .element: class="plain" -->
-
-Notes:
-
-At the heart of the Web Audio API is a number of different audio inputs, processors, and outputs,
-which you can combine into an audio routing graph that creates the sound you need.
 
 ---
 
@@ -94,11 +75,11 @@ import Oscillator from '../instruments/demo/Oscillator'
 export default class Workshop1907 extends Song {
   tempo = 140
   notesPerBeat = 2
-  tracks = [
-    {
+  tracks = {
+    Oscillator: {
       instrument: new Oscillator(this.audioContext, this.destination),
     },
-  ]
+  }
 }
 ```
 
@@ -136,7 +117,7 @@ export default class Oscillator extends Instrument {
 
 ---
 
-<!-- .slide: data-background-iframe="https://volcomix.github.io/coder-synth/Demo/1" data-background-interactive -->
+<!-- .slide: data-background-iframe="https://volcomix.github.io/coder-synth/Demo/Oscillator" data-background-interactive -->
 
 ---
 
@@ -145,7 +126,7 @@ Playing some notes
 ```js
 // src/music/songs/Workshop1907.js
 
-{
+Notes: {
   instrument: new Oscillator(this.audioContext, this.destination),
   notes: `
     C-4 --- E-4 --- F#4 --- G-4 ---
@@ -170,7 +151,7 @@ export default class Oscillator extends Instrument {
 
 ---
 
-<!-- .slide: data-background-iframe="https://volcomix.github.io/coder-synth/Demo/2" data-background-interactive -->
+<!-- .slide: data-background-iframe="https://volcomix.github.io/coder-synth/Demo/Notes" data-background-interactive -->
 
 ---
 
@@ -194,7 +175,7 @@ start() {
 
 ---
 
-<!-- .slide: data-background-iframe="https://volcomix.github.io/coder-synth/Demo/3" data-background-interactive -->
+<!-- .slide: data-background-iframe="https://volcomix.github.io/coder-synth/Demo/Amplitude" data-background-interactive -->
 
 ---
 
@@ -202,7 +183,7 @@ Scheduling some effects
 
 <pre><code class="js" data-line-numbers="1,9-14,17-21">// src/music/songs/Workshop1907.js
 
-{
+Effects: {
   instrument: new Amplitude(this.audioContext, this.destination),
   notes: `
     C-4 --- E-4 --- F#4 --- G-4 ---
@@ -225,7 +206,7 @@ fxGain(gain, time) {
 
 ---
 
-<!-- .slide: data-background-iframe="https://volcomix.github.io/coder-synth/Demo/4" data-background-interactive -->
+<!-- .slide: data-background-iframe="https://volcomix.github.io/coder-synth/Demo/Effects" data-background-interactive -->
 
 ---
 
@@ -258,7 +239,7 @@ noteOff(time) {
 
 ---
 
-<!-- .slide: data-background-iframe="https://volcomix.github.io/coder-synth/Demo/5" data-background-interactive -->
+<!-- .slide: data-background-iframe="https://volcomix.github.io/coder-synth/Demo/Envelope" data-background-interactive -->
 
 ---
 
@@ -295,7 +276,7 @@ stop() {
 
 ---
 
-<!-- .slide: data-background-iframe="https://volcomix.github.io/coder-synth/Demo/6" data-background-interactive -->
+<!-- .slide: data-background-iframe="https://volcomix.github.io/coder-synth/Demo/LFO" data-background-interactive -->
 
 ---
 
@@ -332,7 +313,7 @@ stop() {
 
 ---
 
-<!-- .slide: data-background-iframe="https://volcomix.github.io/coder-synth/Demo/7" data-background-interactive -->
+<!-- .slide: data-background-iframe="https://volcomix.github.io/coder-synth/Demo/FM" data-background-interactive -->
 
 ---
 
@@ -373,7 +354,7 @@ stop() {
 
 ---
 
-<!-- .slide: data-background-iframe="https://volcomix.github.io/coder-synth/Demo/8" data-background-interactive -->
+<!-- .slide: data-background-iframe="https://volcomix.github.io/coder-synth/Demo/Additive" data-background-interactive -->
 
 ---
 
@@ -387,7 +368,7 @@ stop() {
 
 ---
 
-<!-- .slide: data-background-iframe="https://volcomix.github.io/coder-synth/Demo/9" data-background-interactive -->
+<!-- .slide: data-background-iframe="https://volcomix.github.io/coder-synth/Demo/Example" data-background-interactive -->
 
 ---
 
