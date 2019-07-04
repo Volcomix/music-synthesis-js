@@ -417,7 +417,7 @@ stop() {
 
 ```js
 start() {
-  const bufferSize = this.audioContext.sampleRate * 30 // 30 seconds repeating noise
+  const bufferSize = this.audioContext.sampleRate * 30
   const sampleRate = this.audioContext.sampleRate
   const buffer = this.audioContext.createBuffer(1, bufferSize, sampleRate)
   const data = buffer.getChannelData(0)
