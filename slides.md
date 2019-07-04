@@ -39,11 +39,62 @@ A high-level JavaScript API for processing and synthesizing audio
 
 ---
 
+## General audio graph definition
+
+- AudioContext
+- AudioNode
+- AudioParam
+
+--
+
+AudioNodes
+
+<small>
+
+- `Analyser`
+- `BiquadFilter`
+- `Buffer`
+- `BufferSource`
+- `ConstantSource`
+- `ChannelMerger`
+- `ChannelSplitter`
+- `Convolver`
+- `Delay`
+- `DynamicsCompressor`
+- `Gain`
+- `IIRFilter`
+- `Oscillator`
+- `Panner`
+- `PeriodicWave`
+- `ScriptProcessor`
+- `StereoPanner`
+- `WaveShaper`
+
+</small>
+
+--
+
+AudioParam methods
+
+<small>
+
+- `setValueAtTime()`
+- `linearRampToValueAtTime()`
+- `exponentialRampToValueAtTime()`
+- `setTargetAtTime()`
+- `setValueCurveAtTime()`
+- `cancelScheduledValues()`
+- `cancelAndHoldAtTime()`
+
+</small>
+
+---
+
 <!-- .slide: data-background-color="#2a2e33" -->
 
 ## Workshop
 
-https://codesandbox.io/s/github/volcomix/coder-synth
+https://codesandbox.io/live/Y8XRM
 
 ---
 
@@ -358,7 +409,44 @@ stop() {
 
 ---
 
-[TBD] Filters
+## Subtractive synthesis
+
+![](assets/filter.png) <!-- .element: style="margin: -15% 0" class="plain" -->
+
+---
+
+```js
+start() {
+  const bufferSize = this.audioContext.sampleRate * 30 // 30 seconds repeating noise
+  const sampleRate = this.audioContext.sampleRate
+  const buffer = this.audioContext.createBuffer(1, bufferSize, sampleRate)
+  const data = buffer.getChannelData(0)
+  for (let i = 0; i < bufferSize; i++) {
+    data[i] = Math.random() * 2 - 1
+  }
+
+  this.noise = this.audioContext.createBufferSource()
+  this.noise.buffer = buffer
+
+  this.filter = this.audioContext.createBiquadFilter()
+  this.filter.type = 'lowpass'
+  this.filter.frequency.value = 440
+  this.filter.Q.value = 20
+
+  this.noise.connect(this.filter)
+  this.filter.connect(this.destination)
+
+  this.noise.start()
+}
+
+stop() {
+  this.noise.stop()
+}
+```
+
+---
+
+<!-- .slide: data-background-iframe="https://volcomix.github.io/coder-synth/Demo/Subtractive" data-background-interactive -->
 
 ---
 
