@@ -94,7 +94,7 @@ AudioParam methods
 
 ## Workshop
 
-https://codesandbox.io/s/github/Volcomix/coder-synth
+https://codesandbox.io/s/github/volcomix/coder-synth
 
 ---
 
