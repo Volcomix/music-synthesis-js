@@ -121,14 +121,14 @@ Adding a track for your instrument
 // src/music/songs/Workshop1907.js
 
 import Song from '../common/Song'
-import Oscillator from '../instruments/demo/Oscillator'
+import YourInstrument from '../instruments/YourInstrument'
 
 export default class Workshop1907 extends Song {
   tempo = 140
   notesPerBeat = 2
   tracks = {
-    Oscillator: {
-      instrument: new Oscillator(this.audioContext, this.destination),
+    YourTrackName: {
+      instrument: new YourInstrument(),
     },
   }
 }
@@ -147,16 +147,16 @@ export default class Workshop1907 extends Song {
 ![](assets/oscillator.png) <!-- .element: width="90%" style="margin: -18% 0" class="plain" -->
 
 ```js
-// src/music/instruments/Oscillator.js
+// src/music/instruments/YourInstrument.js
 
 import Instrument from '../../common/Instrument'
 
-export default class Oscillator extends Instrument {
-  start() {
-    this.oscillator = this.audioContext.createOscillator()
+export default class YourInstrument extends Instrument {
+  start(audioContext, destination) {
+    this.oscillator = audioContext.createOscillator()
     this.oscillator.type = 'sine' // Or square, triangle, sawtooth, custom
     this.oscillator.frequency.value = 440
-    this.oscillator.connect(this.destination)
+    this.oscillator.connect(destination)
     this.oscillator.start()
   }
 
@@ -177,17 +177,17 @@ Playing some notes
 ```js
 // src/music/songs/Workshop1907.js
 
-Notes: {
-  instrument: new Oscillator(this.audioContext, this.destination),
+YourTrackName: {
+  instrument: new YourInstrument(),
   notes: `
     C-4 --- E-4 --- F#4 --- G-4 ---
     --- --- --- --- --- --- --- OFF
   `,
 }
 
-// src/music/instruments/Oscillator.js
+// src/music/instruments/YourInstrument.js
 
-export default class Oscillator extends Instrument {
+export default class YourInstrument extends Instrument {
   ...
 
   noteOn(noteFrequency, time) {
@@ -211,14 +211,14 @@ export default class Oscillator extends Instrument {
 ![](assets/amplitude.png) <!-- .element: style="margin: -15% 0" class="plain" -->
 
 ```js
-start() {
-  this.oscillator = this.audioContext.createOscillator()
+start(audioContext, destination) {
+  this.oscillator = audioContext.createOscillator()
 
-  this.gain = this.audioContext.createGain()
+  this.gain = audioContext.createGain()
   this.gain.gain.value = 0.5
 
   this.oscillator.connect(this.gain)
-  this.gain.connect(this.destination)
+  this.gain.connect(destination)
 
   this.oscillator.start()
 }
@@ -234,8 +234,8 @@ Scheduling some effects
 
 <pre><code class="js" data-line-numbers="1,9-14,17-21">// src/music/songs/Workshop1907.js
 
-Effects: {
-  instrument: new Amplitude(this.audioContext, this.destination),
+YourTrackName: {
+  instrument: new YourInstrument(),
   notes: `
     C-4 --- E-4 --- F#4 --- G-4 ---
     --- --- --- --- --- --- --- OFF
@@ -248,7 +248,7 @@ Effects: {
   },
 }
 
-// src/music/instruments/Amplitude.js
+// src/music/instruments/YourInstrument.js
 
 fxGain(gain, time) {
   this.gain.gain.linearRampToValueAtTime(gain / 255, time)
@@ -301,19 +301,19 @@ noteOff(time) {
 ---
 
 ```js
-start() {
-  this.lfo = this.audioContext.createOscillator()
+start(audioContext, destination) {
+  this.lfo = audioContext.createOscillator()
   this.lfo.frequency.value = 1
 
-  this.oscillator = this.audioContext.createOscillator()
+  this.oscillator = audioContext.createOscillator()
   this.oscillator.frequency.value = 440
 
-  this.modulationGain = this.audioContext.createGain()
+  this.modulationGain = audioContext.createGain()
   this.modulationGain.gain.value = 50
 
   this.lfo.connect(this.modulationGain)
   this.modulationGain.connect(this.oscillator.detune)
-  this.oscillator.connect(this.destination)
+  this.oscillator.connect(destination)
 
   this.lfo.start()
   this.oscillator.start()
@@ -338,19 +338,19 @@ stop() {
 ---
 
 ```js
-start() {
-  this.oscillator1 = this.audioContext.createOscillator()
+start(audioContext, destination) {
+  this.oscillator1 = audioContext.createOscillator()
   this.oscillator1.frequency.value = 220
 
-  this.oscillator2 = this.audioContext.createOscillator()
+  this.oscillator2 = audioContext.createOscillator()
   this.oscillator2.frequency.value = 440
 
-  this.modulationGain = this.audioContext.createGain()
+  this.modulationGain = audioContext.createGain()
   this.modulationGain.gain.value = 50
 
   this.oscillator1.connect(this.modulationGain)
   this.modulationGain.connect(this.oscillator2.frequency)
-  this.oscillator2.connect(this.destination)
+  this.oscillator2.connect(destination)
 
   this.oscillator1.start()
   this.oscillator2.start()
@@ -375,23 +375,23 @@ stop() {
 ---
 
 ```js
-start() {
-  this.oscillator1 = this.audioContext.createOscillator()
+start(audioContext, destination) {
+  this.oscillator1 = audioContext.createOscillator()
   this.oscillator1.frequency.value = 220
 
-  this.oscillator2 = this.audioContext.createOscillator()
+  this.oscillator2 = audioContext.createOscillator()
   this.oscillator2.frequency.value = 440
 
-  this.gain1 = this.audioContext.createGain()
+  this.gain1 = audioContext.createGain()
   this.gain1.gain.value = 0.5
 
-  this.gain2 = this.audioContext.createGain()
+  this.gain2 = audioContext.createGain()
   this.gain2.gain.value = 0.5
 
   this.oscillator1.connect(this.gain1)
   this.oscillator2.connect(this.gain2)
-  this.gain1.connect(this.destination)
-  this.gain2.connect(this.destination)
+  this.gain1.connect(destination)
+  this.gain2.connect(destination)
 
   this.oscillator1.start()
   this.oscillator2.start()
@@ -416,25 +416,25 @@ stop() {
 ---
 
 ```js
-start() {
-  const bufferSize = this.audioContext.sampleRate * 30
-  const sampleRate = this.audioContext.sampleRate
-  const buffer = this.audioContext.createBuffer(1, bufferSize, sampleRate)
+start(audioContext, destination) {
+  const bufferSize = audioContext.sampleRate * 30
+  const sampleRate = audioContext.sampleRate
+  const buffer = audioContext.createBuffer(1, bufferSize, sampleRate)
   const data = buffer.getChannelData(0)
   for (let i = 0; i < bufferSize; i++) {
     data[i] = Math.random() * 2 - 1
   }
 
-  this.noise = this.audioContext.createBufferSource()
+  this.noise = audioContext.createBufferSource()
   this.noise.buffer = buffer
 
-  this.filter = this.audioContext.createBiquadFilter()
+  this.filter = audioContext.createBiquadFilter()
   this.filter.type = 'lowpass'
   this.filter.frequency.value = 440
   this.filter.Q.value = 20
 
   this.noise.connect(this.filter)
-  this.filter.connect(this.destination)
+  this.filter.connect(destination)
 
   this.noise.start()
 }
